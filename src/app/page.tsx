@@ -1,6 +1,7 @@
 import MovieItem from "@/components/movie/MovieItem";
 import { Movie } from "@/types/Movie";
 import styles from "./page.module.css";
+import MovieList from "@/components/movie/MovieList";
 
 export default async function Home() {
   const response = await fetch(
@@ -14,11 +15,7 @@ export default async function Home() {
 
   return (
     <main>
-      <div className={styles.movieList}>
-        {movieList.map((movie) => {
-          return <MovieItem key={movie.name} movie={movie} />;
-        })}
-      </div>
+      <MovieList movies={movieList} />
     </main>
   );
 }

@@ -1,0 +1,14 @@
+.movieList {
+  display: flex;
+  align-items: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,0 +1,46 @@
+.movieName {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.poster {
+    position: relative;
+    width: 182px;
+    height: 268px;
+}
+
+.poster img {
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #aaaaaa;
+}
+
+.hover {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: #ffffff99;
+    border-radius: 5px;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.hover:hover {
+    opacity: 1;
+}
+
+.movieTitle {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 13px;
+    overflow-wrap: break-word;
+    max-width: 182px;
+    margin-top: 4px;
+}

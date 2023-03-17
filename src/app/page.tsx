@@ -1,4 +1,6 @@
+import MovieItem from "@/components/movie/MovieItem";
 import { Movie } from "@/types/Movie";
+import styles from "./page.module.css";
 
 export default async function Home() {
   const response = await fetch(
@@ -6,11 +8,17 @@ export default async function Home() {
   );
   const movieList: Movie[] = await response.json();
 
+  movieList.sort((movie1: Movie, movie2: Movie) => {
+    return movie2.rating - movie1.rating;
+  });
+
   return (
     <main>
-      {movieList.map((movie, i) => {
-        return <p key={i}>{movie.name}</p>;
-      })}
+      <div className={styles.movieList}>
+        {movieList.map((movie) => {
+          return <MovieItem key={movie.name} movie={movie} />;
+        })}
+      </div>
     </main>
   );
 }

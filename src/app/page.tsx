@@ -1,6 +1,4 @@
-import MovieItem from "@/components/movie/MovieItem";
 import { Movie } from "@/types/Movie";
-import styles from "./page.module.css";
 import MovieList from "@/components/movie/MovieList";
 
 export default async function Home() {

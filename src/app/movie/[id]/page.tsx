@@ -1,4 +1,4 @@
-import MovieItem from "@/components/movie/MovieItem";
+import RouteButton from "@/components/button/RouteButton";
 import { Movie } from "@/types/Movie";
 import Image from "next/image";
 
@@ -24,6 +24,7 @@ export default async function MoviePage({ params }: MoviePageProps) {
 
   return (
     <div>
+      <RouteButton title="Go back" route="/" />
       <Image src={movie.image_url} width={260} height={386} alt={""} />
       <h1>
         {movie.year} - {movie.name}

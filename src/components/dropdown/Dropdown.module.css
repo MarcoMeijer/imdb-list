@@ -1,0 +1,36 @@
+.dropdown {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.dropdown select {
+    margin: 0px 6px;
+    display: flex;
+    flex-direction: row;
+    padding: 8px 3px 8px 8px;
+    border-radius: 7px;
+    font: inherit;
+    outline: none;
+    line-height: 1.2;
+    background: #222222;
+    color:white;
+    border:0;
+}
+
+.dropdown select:hover {
+    background-color: #444444;
+}
+
+.dropdown select:after {
+    content: "▼";
+    position: absolute;
+    top: 0;
+    right: 5px;
+    bottom: 0;
+    line-height: 30px;
+    padding: 5px 14px;
+    background: #000;
+    color: white;
+    pointer-events: none;
+}

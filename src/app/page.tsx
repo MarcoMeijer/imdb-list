@@ -7,10 +7,6 @@ export default async function Home() {
   );
   const movieList: Movie[] = await response.json();
 
-  movieList.sort((movie1: Movie, movie2: Movie) => {
-    return movie2.rating - movie1.rating;
-  });
-
   return (
     <main>
       <MovieList movies={movieList} />

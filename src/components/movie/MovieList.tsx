@@ -3,7 +3,7 @@ import { Movie } from "@/types/Movie";
 import styles from "./MovieList.module.css";
 import MovieItem from "./MovieItem";
 import { useSearchParams } from "next/navigation";
-import SearchParams, { SearchOrder } from "../search/SearchParams";
+import SearchParams, { Genre, SearchOrder } from "../search/SearchParams";
 import { useState } from "react";
 
 export interface MovieListProps {
@@ -15,6 +15,7 @@ export default function MovieList({ movies }: MovieListProps) {
   const search = searchParams.get("search") ?? "";
 
   const [orderBy, setOrderBy] = useState<SearchOrder>("rating descending");
+  const [genre, setGenre] = useState<Genre>("All");
 
   movies.sort((movie1, movie2) => {
     if (orderBy === "rating ascending") {
@@ -31,12 +32,19 @@ export default function MovieList({ movies }: MovieListProps) {
   });
 
   const filteredMovies = movies.filter((movie) => {
-    return movie.name.toLowerCase().includes(search.toLowerCase());
+    if (!movie.name.toLowerCase().includes(search.toLowerCase())) return false;
+    if (genre !== "All") return movie.genre.includes(genre);
+    return true;
   });
 
   return (
     <div className={styles.container}>
-      <SearchParams orderBy={orderBy} setOrderBy={setOrderBy} />
+      <SearchParams
+        orderBy={orderBy}
+        setOrderBy={setOrderBy}
+        genre={genre}
+        setGenre={setGenre}
+      />
       <div className={styles.movieList}>
         {filteredMovies.map((movie) => {
           return <MovieItem key={movie.name} movie={movie} />;

@@ -4,6 +4,7 @@ import styles from "./MovieItem.module.css";
 import Link from "next/link";
 import useLocalStorage from "@/hooks/useLocalStorage";
 import Favorite from "../favorite/Favorite";
+import StarIcon from "../icons/StarIcon";
 
 export interface MovieItemProps {
   movie: Movie;
@@ -26,7 +27,10 @@ export default function MovieItem({ movie }: MovieItemProps) {
         />
         <Link href={`/movie/${encodeURIComponent(movie.name)}`}>
           <div className={styles.hover}>
-            <p>IMDB {movie.rating}/10</p>
+            <p>
+              <StarIcon fill="#fbd341" />
+              {movie.rating.toFixed(1)}/10
+            </p>
             <p>{movie.year}</p>
           </div>
         </Link>

@@ -40,11 +40,19 @@
     opacity: 1;
 }
 
+.hover p {
+    display: flex;
+    flex-direction: row;
+    color: #ffffff;
+    font-size: 28px;
+    align-items: center;
+}
+
 .movieTitle {
     display: flex;
     align-items: center;
     text-align: center;
-    font-size: 13px;
+    font-size: 15px;
     overflow-wrap: break-word;
     max-width: 182px;
     margin-top: 4px;

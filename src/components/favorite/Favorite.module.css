@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #00000088;
+    background-color: #000000bb;
     position: absolute;
     top: -4px;
     left: 5px;
@@ -17,13 +17,13 @@
     transition: all 0.3s;
 }
 .addFavorite:hover {
-    background-color: #99999988;
+    background-color: #999999bb;
 }
 .addFavorite:hover::after {
-    border-top-color: #99999988;
+    border-top-color: #999999bb;
 }
 .addFavorite:hover::before {
-    border-top-color: #99999988;
+    border-top-color: #999999bb;
 }
 .favorite:after, .addFavorite:after {
     content: "";
@@ -32,7 +32,7 @@
     bottom: -13px;
     width: 0;
     height: 0;
-    border-top: 13px solid #00000088;
+    border-top: 13px solid #000000bb;
     border-right: 16px solid transparent;
     transition: all 0.3s;
 }
@@ -43,7 +43,7 @@
     bottom: -13px;
     width: 0;
     height: 0;
-    border-top: 13px solid #00000088;
+    border-top: 13px solid #000000bb;
     border-left: 16px solid transparent;
     transition: all 0.3s;
 }

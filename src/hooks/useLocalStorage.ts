@@ -4,14 +4,19 @@ export default function useLocalStorage<T>(
   key: string,
   defaultValue: T
 ): [T, React.Dispatch<T>] {
-  const storedValue = localStorage.getItem(key);
-  const currentValue =
-    storedValue === null ? defaultValue : JSON.parse(storedValue);
-  const [value, setValue] = useState(currentValue);
+  const [value, setValue] = useState(defaultValue);
 
   useEffect(() => {
-    localStorage.setItem(key, value);
-  }, [key, value]);
+    const storedValue = localStorage.getItem(key);
+    if (storedValue !== null) {
+      setValue(JSON.parse(storedValue));
+    }
+  }, [key]);
 
-  return [value, setValue];
+  const saveValue = (newValue: T) => {
+    localStorage.setItem(key, JSON.stringify(newValue));
+    setValue(newValue);
+  };
+
+  return [value, saveValue];
 }

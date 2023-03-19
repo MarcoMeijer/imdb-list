@@ -1,0 +1,63 @@
+.favorite, .addFavorite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00000088;
+    position: absolute;
+    top: -4px;
+    left: 5px;
+    padding: 6px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 24px;
+    width: 20px;
+    height: 25px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s;
+}
+.addFavorite:hover {
+    background-color: #99999988;
+}
+.addFavorite:hover::after {
+    border-top-color: #99999988;
+}
+.addFavorite:hover::before {
+    border-top-color: #99999988;
+}
+.favorite:after, .addFavorite:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -13px;
+    width: 0;
+    height: 0;
+    border-top: 13px solid #00000088;
+    border-right: 16px solid transparent;
+    transition: all 0.3s;
+}
+.favorite:before, .addFavorite:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -13px;
+    width: 0;
+    height: 0;
+    border-top: 13px solid #00000088;
+    border-left: 16px solid transparent;
+    transition: all 0.3s;
+}
+
+.favorite {
+    background-color: #fbd341;
+    color: black;
+}
+
+.favorite:after {
+    bottom: -12px;
+    border-top-color: #fbd341;
+}
+.favorite:before {
+    bottom: -12px;
+    border-top-color: #fbd341;
+}

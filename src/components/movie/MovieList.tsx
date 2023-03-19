@@ -16,7 +16,7 @@ export default function MovieList({ movies }: MovieListProps) {
 
   const [orderBy, setOrderBy] = useState<SearchOrder>("rating descending");
 
-  const orderedMovies = movies.sort((movie1, movie2) => {
+  movies.sort((movie1, movie2) => {
     if (orderBy === "rating ascending") {
       return movie1.rating - movie2.rating;
     } else if (orderBy === "rating descending") {

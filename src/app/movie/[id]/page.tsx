@@ -24,7 +24,6 @@ export default async function MoviePage({ params }: MoviePageProps) {
 
   return (
     <div>
-      <RouteButton title="Go back" route="/" />
       <Image src={movie.image_url} width={260} height={386} alt={""} />
       <h1>
         {movie.year} - {movie.name}

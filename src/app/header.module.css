@@ -1,9 +1,24 @@
 
 .header {
   display: flex;
-  align-items: row;
+  flex-direction: row;
   background-color: #222222;
   align-self: stretch;
   justify-content: center;
-  padding: 5px;
+  align-items: center;
+  padding: 14px;
+}
+
+.button {
+    color: #ffffff;
+    margin: 0px 10px;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #444444;
 }

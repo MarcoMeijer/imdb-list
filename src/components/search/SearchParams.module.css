@@ -1,6 +1,6 @@
 .searchParams {
     display: flex;
-    width: 1000px;
+    max-width: 1000px;
     padding: 10px;
     margin: 10px 40px;
     background-color: #222222;
